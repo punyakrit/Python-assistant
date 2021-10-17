@@ -3,6 +3,7 @@ import speech_recognition as sr
 import datetime
 import os
 import cv2
+import random
 
 
 engine = pyttsx3.init('sapi5')
@@ -22,7 +23,7 @@ def takecommand():
     with sr.Microphone() as source:
         print("Listening...")
         r.pause_threshold = 1
-        audio = r.listen(source, timeout=1, phrase_time_limit=5)
+        audio = r.listen(source, timeout=10, phrase_time_limit=5)
 
     try:
         print("Recognizing...")
@@ -61,14 +62,16 @@ if __name__ == "__main__":
             os.system("Start cmd")
 
         elif "open camera" in query:
-            cap =cv2.VideoCapture(0)
-            while True:
-                ret, img = cap.read()
-                cv2.imshow('Webcam', img)
-                k = cv2.waitkey(50)
-                if k==27:
-                    break;
-                cap.release()
-                cv2.destroyAllWindows()
+             cap = cv2.VideoCapture(0)
+             while True:
+                 ret, frame = cap.read()
+
+                 cv2.imshow('frame', frame)
+                 if cv2.waitKey(1) & 0xFF == ord('q'):
+                     break
+
+             cap.release()
+             cv2.destroyAllWindows()
+                 
 
 
