@@ -1,1 +1,11 @@
+pip install pyttsx3
 
+
+
+pip install speech_recognition
+
+
+
+
+for opening camera in assistant
+pip install opencv-python
