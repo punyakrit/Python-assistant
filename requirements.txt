@@ -9,3 +9,6 @@ pip install speech_recognition
 
 for opening camera in assistant
 pip install opencv-python
+
+
+pip install pyaudio
