@@ -10,9 +10,12 @@ import sys
 
 
 
+
+
+
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
+engine.setProperty('voice', voices[0].id)
 
 #texttospeak
 
@@ -85,9 +88,21 @@ if __name__ == "__main__":
             speak(results)
             print(results)
 
+#answer questions
+
+ 
+        elif "india" in query:
+            speak("capital of india is Delhi")
+
+        elif "states in country" in query:
+            speak("The federal union of India is broken into 29 states and seven territories.") 
+
+        
+			
+			
 
 
-
+#open apps websites
 
         elif "open youtube" in query:
             webbrowser.open("www.youtube.com")
@@ -99,9 +114,25 @@ if __name__ == "__main__":
         elif 'how are you' in query:
              speak("I am fine, Thank you")
              speak("How are you, Sir")
+
+
  
         elif 'fine' in query or "good" in query:
             speak("It's good to know that your fine")
+
+        
+
+        elif "what's your name" in query or "What is your name" in query:
+            speak("My friends call me Jarvis")
+            print("My friends call me Jarvis")
+
+
+        elif "who made you" in query or "who created you" in query:
+            speak("I have been created by Punyakrit.")
+
+        
+		    
+		    
        
 
 
@@ -113,7 +144,5 @@ if __name__ == "__main__":
         elif "shutdown" in query:
             speak("Have a good day")
             sys.exit()
-        
-
 
 
