@@ -7,8 +7,6 @@ import random
 import wikipedia
 import webbrowser
 import sys
-import pywhatkit
-import pyjokes
 
 
 
