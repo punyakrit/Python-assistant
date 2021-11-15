@@ -1,14 +1,15 @@
 pip install pyttsx3
 
-
-
 pip install speech_recognition
 
+pip install datetime
 
+pip imort wikipedia
 
+pip insatll webbrowser
 
 for opening camera in assistant
 pip install opencv-python
 
-
 pip install pyaudio
+if pyaudio not installing download from https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
