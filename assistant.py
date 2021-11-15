@@ -9,10 +9,6 @@ import webbrowser
 import sys
 
 
-
-
-
-
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
@@ -52,8 +48,9 @@ def wish():
         speak("Good Evening")
     else:
         speak("Good Evening")
-    speak("I am Jarvis please tell me how can i help you")
-
+    speak("I am Jarvis please tell me how can i help you  ")
+    speak("i can be very useful to use")
+    speak(" just say open google and the whatever you want to search on google")
 
 if __name__ == "__main__":
     wish()
@@ -80,37 +77,10 @@ if __name__ == "__main__":
              cap.release()
              cv2.destroyAllWindows()
 
-        elif "wikipedia" in query:
-            speak("Searching Wikipedia...")
-            query = query.replace("wikipedia", "")
-            results = wikipedia.summary(query,sentences=2)
-            speak("according to wikipedia")
-            speak(results)
-            print(results)
+        
 
 #answer questions
 
- 
-        elif "india" in query:
-            speak("capital of india is Delhi")
-
-        elif "states in country" in query:
-            speak("The federal union of India is broken into 29 states and seven territories.") 
-
-        
-			
-			
-
-
-#open apps websites
-
-        elif "open youtube" in query:
-            webbrowser.open("www.youtube.com")
-
-        elif "open github" in query:
-            webbrowser.open("https://github.com/punyakrit")
- 
-        
         elif 'how are you' in query:
              speak("I am fine, Thank you")
              speak("How are you, Sir")
@@ -130,19 +100,36 @@ if __name__ == "__main__":
         elif "who made you" in query or "who created you" in query:
             speak("I have been created by Punyakrit.")
 
+    
+
+#open apps websites
+
+        elif "open youtube" in query:
+            speak("opening youtube")
+            webbrowser.open("www.youtube.com")
+
+        elif "open github" in query:
+            speak("opening github")
+            webbrowser.open("https://github.com/punyakrit")
+ 
         
-		    
-		    
-       
-
-
+        
         elif "open google" in query:
             speak("Sir, what should i search on google")
             cm= takecommand().lower()
             webbrowser.open(f"{cm}")
+            speak("opening web browser")
+
+        elif "wikipedia" in query:
+            speak("Searching Wikipedia...")
+            query = query.replace("wikipedia", "")
+            results = wikipedia.summary(query,sentences=2)
+            speak("according to wikipedia")
+            speak(results)
+            print(results)
+
+#stopping the program
 
         elif "shutdown" in query:
             speak("Have a good day")
             sys.exit()
-
-
