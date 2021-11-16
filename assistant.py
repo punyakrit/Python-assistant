@@ -3,7 +3,6 @@ import speech_recognition as sr
 import datetime
 import os
 import cv2
-import random
 import wikipedia
 import webbrowser
 import sys
@@ -49,8 +48,6 @@ def wish():
     else:
         speak("Good Evening")
     speak("I am Jarvis please tell me how can i help you  ")
-    speak("i can be very useful to use")
-    speak(" just say open google and the whatever you want to search on google")
 
 if __name__ == "__main__":
     wish()
@@ -58,14 +55,19 @@ if __name__ == "__main__":
 
         query = takecommand().lower()
 
+#opening basic application
+
         if "open notepad" in query:
             npath = "C:\\Windows\\System32\\notepad.exe"
             os.startfile(npath)
+            speak("opening notepad")
 
         elif "open command prompt" in query:
             os.system("Start cmd")
+            speak("opening command prompt")
 
         elif "open camera" in query:
+             speak("opening camera")
              cap = cv2.VideoCapture(0)
              while True:
                  ret, frame = cap.read()
@@ -77,7 +79,12 @@ if __name__ == "__main__":
              cap.release()
              cv2.destroyAllWindows()
 
-        
+#help
+
+        elif "help" in query:
+             speak("i can be very useful to use")
+             speak(" just say whatever you want me to search on google")
+            
 
 #answer questions
 
@@ -112,13 +119,6 @@ if __name__ == "__main__":
             speak("opening github")
             webbrowser.open("https://github.com/punyakrit")
  
-        
-        
-        elif "open google" in query:
-            speak("Sir, what should i search on google")
-            cm= takecommand().lower()
-            webbrowser.open(f"{cm}")
-            speak("opening web browser")
 
         elif "wikipedia" in query:
             speak("Searching Wikipedia...")
@@ -128,8 +128,16 @@ if __name__ == "__main__":
             speak(results)
             print(results)
 
+        elif "" in query:
+            cm= takecommand().lower()
+            webbrowser.open(f"{cm}")
+
 #stopping the program
 
         elif "shutdown" in query:
             speak("Have a good day")
             sys.exit()
+
+
+        else:
+            speak("sorry i dont understand")
