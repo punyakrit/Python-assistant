@@ -16,6 +16,7 @@ engine.setProperty('voice', voices[0].id)
 
 def speak(audio):
     engine.say(audio)
+    engine.setProperty("rate", 170)
     print(audio)
     engine.runAndWait()
 
@@ -47,7 +48,7 @@ def wish():
         speak("Good Evening")
     else:
         speak("Good Evening")
-    speak("I am Jarvis please tell me how can i help you  ")
+    speak("I am your Virtual Assistant please tell me how can i help you  ")
 
 if __name__ == "__main__":
     wish()
@@ -100,8 +101,8 @@ if __name__ == "__main__":
         
 
         elif "what's your name" in query or "What is your name" in query:
-            speak("My friends call me Jarvis")
-            print("My friends call me Jarvis")
+            speak("My friends call me by any name, but i am a friendly Virtual Assistant")
+            
 
 
         elif "who made you" in query or "who created you" in query:
