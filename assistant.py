@@ -50,11 +50,16 @@ def wish():
         speak("Good Evening")
     speak("I am your Virtual Assistant please tell me how can i help you  ")
 
+
+
+
 if __name__ == "__main__":
     wish()
     while True:
 
         query = takecommand().lower()
+
+
 
 #opening basic application
 
@@ -80,12 +85,15 @@ if __name__ == "__main__":
              cap.release()
              cv2.destroyAllWindows()
 
+
+
 #help
 
         elif "help" in query:
              speak("i can be very useful to use")
              speak(" just say whatever you want me to search on google")
-            
+
+
 
 #answer questions
 
@@ -129,14 +137,22 @@ if __name__ == "__main__":
             speak(results)
             print(results)
 
-        elif "" in query:
+            
+
+#open any website by their complete url or search the web browser and displays the result on opening of new browser
+
+        elif "open google" in query:
+            speak("what should i search for you")
             cm= takecommand().lower()
             webbrowser.open(f"{cm}")
+            speak("opening ")
+            speak(cm)
+
 
 #stopping the program
 
         elif "shutdown" in query:
-            speak("Have a good day")
+            speak("Have a good day, Sir")
             sys.exit()
 
 
